@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../../globalStyles';
-import { FaMagento } from 'react-icons/fa';
+import { FaBuromobelexperte, FaMagento } from 'react-icons/fa';
 
 
 export const Nav = styled.nav`
@@ -36,4 +36,16 @@ align-items:center;
 
 export const NavIcon = styled(FaMagento)`
 margin: 0.5px;
+`
+export const MobileIcon = styled.div`
+display: none;
+@media screen and (max-width: 960px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
 `
