@@ -7,7 +7,10 @@ import {
     NavbarContainer, 
     NavLogo, 
     NavIcon, 
-    MobileIcon
+    MobileIcon,
+    NavMenu,
+    NavItem,
+    NavLinks,
 } from './Navbar.elements';
 
 const Navbar = () => {
@@ -16,18 +19,29 @@ const Navbar = () => {
     const handleClick = () => setClick(!click);
 
     return (
-        <IconContext.Provider value={{color: '#fff'}}> 
-        <Nav>
-           <NavbarContainer>
-            <NavLogo to='/'>
-                <NavIcon/>
+        <IconContext.Provider value={{ color: '#fff' }}>
+            <Nav>
+                <NavbarContainer>
+                    <NavLogo to='/'>
+                        <NavIcon />
                 ULTRA
             </NavLogo>
-            <MobileIcon onClick={handleClick}>
-                {click ? <FaTimes/> : <FaBars/> }
-            </MobileIcon>
-            </NavbarContainer>
-        </Nav>
+                    <MobileIcon onClick={handleClick}>
+                        {click ? <FaTimes /> : <FaBars />}
+                    </MobileIcon>
+                    <NavMenu onClick={handleClick} click={click}>
+                        <NavItem>
+                            <NavLinks to='/'>Home</NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to='/services'>Services</NavLinks>
+                        </NavItem>
+                        <NavItem>
+                            <NavLinks to='/products'>Products</NavLinks>
+                        </NavItem>
+                    </NavMenu>
+                </NavbarContainer>
+            </Nav>
         </IconContext.Provider>
     )
 }
